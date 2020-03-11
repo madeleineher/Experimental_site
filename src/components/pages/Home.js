@@ -14,7 +14,7 @@ const Home = () => {
           <img className='home__img' src={Page1} alt=''/>
         </div>
         <div className='home__blurb'>
-          <h3>THE ESSENTIAL BAG YOU NEVER KNEW YOU NEEDED</h3>
+          <h3>The essential bag you never knew you needed.</h3>
         </div>
       </div>
     </div>

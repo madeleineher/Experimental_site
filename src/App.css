@@ -12,8 +12,8 @@
   --fw-reg: 300;
   --fw-bold: 900;
 
-  --clr-greenDark: #122900;
-  --clr-greenLight: #4e9217;
+  --clr-greenDark: #0b1801;
+  --clr-greenLight: #327000;
   --clr-beigeDark: #bba766;
   --clr-beigeLight: #fff1c2;
   --clr-accent: #ff7f43;
@@ -48,7 +48,7 @@ html {
 
 body {
   background: var(--clr-beigeLight);
-  color: var(--clr-greenLight);
+  color: var(--clr-accent);
   margin: 0;
   font-family: var(--ff-primary);
   font-size: var(--fs-body);
@@ -61,14 +61,14 @@ body {
 }
 
 /* the home */
-
 .home__background {
   display: flex;
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed; /* IDK if i like this solution */
   z-index: -1;
-  bottom: 0;
+  top: 0;
+  bottom: -100%;
 }
 
 .home__green {
@@ -99,17 +99,52 @@ body {
 .home__img {
   box-shadow: var(--bs);
   margin: 0 auto;
-  width: 35%;
-  height: 35%;
+  width: 50%;
+  height: 50%;
 }
 
 .home__blurb {
   color: var(--clr-beigeLight);
   font-size: var(--fs-h3);
-  margin-left: 50%;
-  padding: 1em;
+  /* margin-left: 50%; */
+  padding: 3em;
+  display: block;
+  position: relative;
 }
 
+.home__blurb::before, .home__blurb::after {
+  content: '';
+  height: 60%;
+  left: 0;
+  display: block;
+  position: absolute;
+}
+
+.home__blurb::before{
+  background-color: var(--clr-greenDark);
+  top: 20%;
+  width: 50%;
+  left: 0;
+  right: 0%;
+  z-index: -2;
+  position: absolute;
+  box-shadow: var(--bs);
+  /* border-radius: 2px; */
+  /* border: solid 3px var(--clr-beigeDark); */
+}
+
+.home__blurb::after{
+  background-color: var(--clr-beigeLight);
+  top: 20%;
+  right: 0;
+  width: 50%;
+  z-index: -2;
+  margin-left: 50%;
+  position: absolute;
+  box-shadow: var(--bs);
+  /* border-radius: 2px; */
+  /* border: solid 3px var(--clr-beigeDark); */
+}
 
 /* the about */
 
