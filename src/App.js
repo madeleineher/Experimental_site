@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
       <div className='App'>
-        <NavBar />
+        {/* <NavBar /> */}
         <div className='container'>
           <Switch>
             <Route exact path='/' component={Home} />
@@ -20,7 +20,7 @@ function App() {
             <Route exact path='/shop' component={Shop} />
           </Switch>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );

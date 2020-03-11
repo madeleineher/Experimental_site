@@ -5,8 +5,8 @@ import Page2_closed from './e-shop_pics/page2_open.jpg';
 const About = () => {
   return (
     <div className='about'>
-      <div className='about__white'>white</div>
-      <div className='about__beige'>beige</div>
+      <div className='about__white'></div>
+      <div className='about__beige'></div>
       <div className='about__blurbOne'>
         <h3>SMALL BATCH PRODUCTION</h3>
         <p>
@@ -25,10 +25,10 @@ const About = () => {
         </p>
       </div>
       <div className='about__img1'>
-        <img src={Page2_open} />
+        <img src={Page2_open} alt=''/>
       </div>
       <div className='about__img2'>
-        <img src={Page2_closed} />
+        <img src={Page2_closed} alt=''/>
       </div>
     </div>
   );

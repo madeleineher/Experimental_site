@@ -1,8 +1,115 @@
-* {
-  background-color: #3a694e;
-  color: white;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* my custom properties */
+  --ff-primary: 'Source Sans Pro', sans-serif;
+  --ff-secondary: 'Source Code Pro', monospace;
+
+  --fw-reg: 300;
+  --fw-bold: 900;
+
+  --clr-greenDark: #122900;
+  --clr-greenLight: #4e9217;
+  --clr-beigeDark: #bba766;
+  --clr-beigeLight: #fff1c2;
+  --clr-accent: #ff7f43;
+
+  --fs-h1: 3rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+
+  /* box-shadow */
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15),
+    0.17em 0.17em 0.2em rgba(0, 0, 0, 0.1),
+    0.10em 0.10em 0.15em rgba(0, 0, 0, 0.08),
+    0.08em 0.08em 0.12em rgba(0, 0, 0, 0.05),
+    0.05em 0.05em 0.09em rgba(0, 0, 0, 0.02),
+    0.04em 0.04em 0.05em rgba(0, 0, 0, 0.01);
+}
+
+@media (min-width: 800px) {
+  :root {
+    --fs-h1: 4.5rem;
+    --fs-h2: 3.75rem;
+    --fs-h3: 1.5rem;
+    --fs-body: 1.125rem;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--clr-beigeLight);
+  color: var(--clr-greenLight);
+  margin: 0;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  line-height: 1.7em;
+  height: auto;
 }
 
 .App {
   text-align: center;
 }
+
+/* the home */
+
+.home__background {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+}
+
+.home__green {
+  width: 50%;
+  min-height: 100%;
+  background-color: var(--clr-greenDark);
+}
+
+.home__white {
+  width: 50%;
+  min-height: 100%;
+  background-color: #ffffff;
+}
+
+.home__overlay {
+  z-index: 2;
+  position: absolute;
+  margin: 0 auto;
+}
+
+.home__sloagan {
+  text-align: center;
+  /* font-family: ; */
+  font-size: var(--fs-h1);
+  margin: 0.7em 0 0.7em 0;
+}
+
+.home__img {
+  box-shadow: var(--bs);
+  margin: 0 auto;
+  width: 35%;
+  height: 35%;
+}
+
+.home__blurb {
+  color: var(--clr-beigeLight);
+  font-size: var(--fs-h3);
+  margin-left: 50%;
+  padding: 1em;
+}
+
+
+/* the about */
+
