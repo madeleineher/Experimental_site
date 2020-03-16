@@ -44,28 +44,24 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-html,
-body {
   height: 100%;
-  position: relative;
 }
 
 body {
-  background: var(--clr-beigeLight);
+  background-color: var(--clr-greenLight);
   color: var(--clr-accent);
   margin: 0;
   font-family: var(--ff-primary);
   font-size: var(--fs-body);
   line-height: 1.7em;
-  height: auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .App {
   text-align: center;
-  min-height: 100vh; /* will cover the 100% of viewport */
-  padding-bottom: 100px; /* height of your footer */
 }
 
 .container {
@@ -73,32 +69,27 @@ body {
 }
 
 /* the home */
+
 .home__background {
   display: flex;
   width: 100%;
-  height: 100%;
-  position: fixed; /* IDK if i like this solution */
+  position: fixed;
   z-index: -1;
   top: 0;
-  bottom: -100%;
+  bottom: -10%;
+}
+
+.home__green, .home__white {
+  width: 50%;
+  min-height: 100%;
 }
 
 .home__green {
-  width: 50%;
-  min-height: 100%;
   background-color: var(--clr-greenLight);
 }
 
 .home__white {
-  width: 50%;
-  min-height: 100%;
   background-color: #ffffff;
-}
-
-.home__overlay {
-  z-index: 2;
-  position: absolute;
-  margin: 0 auto;
 }
 
 .home__sloagan {
@@ -107,6 +98,15 @@ body {
   font-size: var(--fs-h1);
   margin-left: -50%;
   padding: 1em;
+  display: block;
+  position: relative;
+}
+
+.home__blurb {
+  color: var(--clr-greenDark);
+  font-size: var(--fs-h3);
+  margin-left: 50%;
+  padding: 3em;
   display: block;
   position: relative;
 }
@@ -123,15 +123,6 @@ body {
     width: 25%;
     height: 25%;
   }
-}
-
-.home__blurb {
-  color: var(--clr-greenDark);
-  font-size: var(--fs-h3);
-  margin-left: 50%;
-  padding: 3em;
-  display: block;
-  position: relative;
 }
 
 @media (max-width: 800px) {
@@ -156,49 +147,124 @@ body {
     padding: 1.2em 1.5em;
     color: var(--clr-greenDark);
   }
-}
-
-/* .home__blurb::before,
-.home__blurb::after {
-  content: '';
-  height: 60%;
-  left: 0;
-  display: block;
-  position: absolute;
-}
-
-.home__blurb::before {
-  background-color: var(--clr-greenDark);
-  top: 20%;
-  width: 50%;
-  left: 0;
-  right: 0%;
-  z-index: -2;
-  position: absolute;
-  box-shadow: var(--bs);
-  border-radius: 2px;
-  border: solid 3px var(--clr-beigeDark);
-}
-
-.home__blurb::after {
-  background-color: var(--clr-beigeLight);
-  top: 20%;
-  right: 0;
-  width: 50%;
-  z-index: -2;
-  margin-left: 50%;
-  position: absolute;
-  box-shadow: var(--bs);
-  border-radius: 2px;
-  border: solid 3px var(--clr-beigeDark);
-} */
+} 
 
 /* the about */
+.about__background {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  bottom: -10%;
+}
+
+.about__beige, .about__white {
+  width: 50%;
+  min-height: 100%;
+}
+
+.about__white {
+  background-color: #fefdfb;
+}
+
+.about__beige {
+  background-color: var(--clr-beigeLight);
+}
+
+/* portfolio */
+.about__items {
+  padding: 5em;
+  z-index: 2;
+  display: grid;
+  height: 100%;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 30px;
+}
+
+.about__item {
+  /* background: var(--clr-accent); */
+  display: flex;
+  color: var(--clr-greenDark);
+  /* border: 3px solid red; */
+  align-items: center;
+  justify-content: center;
+}
+
+.about__item.about__blurb {
+  grid-row: span 2;
+  grid-column: span 2;
+  background-color: var(--clr-beigeLight);
+}
+
+.about__item.about__img1 {
+  grid-column: span 3;
+  grid-row: span 5;
+}
+
+.about__img2 img {
+  width: 210px;
+  height: 210px;
+  box-shadow: var(--bs);
+}
+
+.about__img1 img {
+  min-width: 100%;
+  max-height: 100%;
+  box-shadow: var(--bs);
+}
+
+.about__title {
+  transform: rotate(-90deg);
+}
+
+.about__blurb p {
+  padding: 0 1.7em;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+@media (max-width: 800px) {
+  .about__img1 img {
+    min-width: 100%;
+    max-height: 60%;
+    box-shadow: var(--bs);
+  }
+}
+
+@media (max-width: 700px) {
+  .about__items {
+    padding: 2em ;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about__item.about__blurb {
+    background-color: var(--clr-greenLight);
+    color: var(--clr-beigeLight)
+  }
+  .about__img1 {
+    display: none;
+  }
+  .about__blurb h1 {
+    font-size: var(--fs-h3);
+  }
+  .about__title {
+    transform: none;
+    font-size: var(--fs-h1);
+    line-height: 1em;
+  }
+}
 
 /* the footer */
 .footer {
-  position: absolute;
-  bottom: 0;
+  z-index: 2;
+  color: var(--clr-greenDark);
   width: 100%;
-  border: 3px solid red;
+  padding: 1em;
+  margin-top: auto;
+  bottom: 0;
 }
+
+/* need media query here stick footer to bottom 
+of page when the window width is small */
