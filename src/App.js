@@ -32,7 +32,7 @@ class App extends Component {
     return (
       <Router>
         <div className='App'>
-          <NavBar toggleClickHandler={this.toggle}/>
+          <NavBar toggleClickHandler={this.toggle} isNavBar={this.state.toggleNavbar}/>
           {toggleNav}
           <div className='container'>
             <Switch>
