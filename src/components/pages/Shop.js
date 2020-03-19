@@ -55,7 +55,7 @@ const Shop = () => {
           </form>
         </div>
         <div className='shop__button'>
-          <button>ADD TO BAG</button>
+          <button className='shop__buttonAdd'>ADD TO BAG</button>
         </div>
         <div className='shop__right_img'>
           <img src={Page3_out} alt=''/>
